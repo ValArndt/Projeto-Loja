@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CupCakes Gourmet - Loja Virtual</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome para Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Externo -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-slate-900 flex justify-center items-center min-h-screen p-0 sm:p-4 font-sans text-slate-800">
+
+    <!-- Container Principal com Aspecto Mobile -->
+    <div class="app-container w-full bg-slate-50 relative shadow-2xl rounded-none sm:rounded-[36px] overflow-hidden flex flex-col justify-between border-0 sm:border-[8px] border-slate-800">
+        
+        <!-- HEADER TOP BAR -->
+        <header class="bg-white px-5 py-4 border-b border-rose-100 flex justify-between items-center sticky top-0 z-20">
+            <div class="flex items-center space-x-2">
+                <div class="w-9 h-9 bg-pink-100 rounded-full flex items-center justify-center text-pink-500 font-bold text-lg">
+                    <i class="fa-solid font-bold fa-stroopwafel"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-rose-500 text-base leading-tight">CupCakes Gourmet</h1>
+                    <p class="text-[10px] text-slate-400 font-medium">Loja Virtual de Cupcakes</p>
+                </div>
+            </div>
+            <button onclick="router.navigate('carrinho')" class="relative p-2 text-slate-600 hover:text-pink-500 transition">
+                <i class="fa-solid fa-basket-shopping text-xl"></i>
+                <span id="cart-badge" class="absolute top-0 right-0 bg-pink-500 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center hidden">0</span>
+            </button>
+        </header>
+
+        <!-- ÁREA DE CONTEÚDO DINÂMICO (VIEWS) -->
+        <main id="app-view" class="flex-1 overflow-y-auto p-4 pb-24">
+            <!-- As telas serão renderizadas aqui dinamicamente via JS -->
+        </main>
+
+        <!-- BARRA DE NAVEGAÇÃO INFERIOR -->
+        <nav class="bg-white border-t border-slate-200 px-4 py-2 flex justify-around items-center absolute bottom-0 left-0 right-0 z-20">
+            <button onclick="router.navigate('catalogo')" id="nav-catalogo" class="flex flex-col items-center text-pink-500 font-medium text-[11px]">
+                <i class="fa-solid fa-house text-lg mb-1"></i>
+                <span>Início</span>
+            </button>
+            <button onclick="router.navigate('catalogo')" id="nav-categorias" class="flex flex-col items-center text-slate-400 font-medium text-[11px] hover:text-pink-500">
+                <i class="fa-solid fa-list-ul text-lg mb-1"></i>
+                <span>Categorias</span>
+            </button>
+            <button onclick="router.navigate('carrinho')" id="nav-carrinho" class="flex flex-col items-center text-slate-400 font-medium text-[11px] hover:text-pink-500 relative">
+                <i class="fa-solid fa-cart-shopping text-lg mb-1"></i>
+                <span>Carrinho</span>
+            </button>
+            <button onclick="router.navigate('pedidos')" id="nav-pedidos" class="flex flex-col items-center text-slate-400 font-medium text-[11px] hover:text-pink-500">
+                <i class="fa-solid fa-receipt text-lg mb-1"></i>
+                <span>Pedidos</span>
+            </button>
+            <button onclick="alert('Perfil do Usuário')" id="nav-perfil" class="flex flex-col items-center text-slate-400 font-medium text-[11px] hover:text-pink-500">
+                <i class="fa-solid fa-user text-lg mb-1"></i>
+                <span>Perfil</span>
+            </button>
+        </nav>
+
+    </div>
+
+    <!-- JavaScript Externo -->
+    <script src="script.js"></script>
+</body>
+</html>
