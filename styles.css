@@ -3,7 +3,6 @@
     min-height: 844px;
 }
 
-/* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 4px;
 }

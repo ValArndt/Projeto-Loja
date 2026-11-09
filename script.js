@@ -1,6 +1,3 @@
-// ==========================================
-// 1. MODEL (Dados e Regras de Negócio)
-// ==========================================
 const state = {
     produtos: [
         { id: 1, nome: "Chocolate Belga", preco: 8.90, categoria: "Chocolate", descricao: "Massa de chocolate belga com recheio cremoso e cobertura de ganache.", imagem: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400", sabores: ["Chocolate"] },
@@ -22,13 +19,13 @@ const state = {
         bairro: "Centro",
         cidade: "São Paulo, SP",
         cep: "01234-567",
-        tipoEntrega: "casa", // 'casa' ou 'loja'
+        tipoEntrega: "casa", 
         taxaEntrega: 7.90,
         dataEntrega: "24/05/2024",
         horarioEntrega: "14:00 - 15:00"
     },
     pagamento: {
-        metodo: "pix" // 'pix', 'cartao', 'debito', 'dinheiro'
+        metodo: "pix" 
     },
     pedidoAtual: null,
     historicoPedidos: [
@@ -49,9 +46,6 @@ const state = {
     ]
 };
 
-// ==========================================
-// 2. CONTROLLER (Lógica de Controle e Ações)
-// ==========================================
 const controller = {
     getProdutos(categoria = 'Todos') {
         if (categoria === 'Todos') return state.produtos;
@@ -72,7 +66,6 @@ const controller = {
         }
         this.atualizarBadgeCarrinho();
         
-        // Notificação flutuante com visual moderno alinhado ao app
         this.mostrarToast('Item adicionado ao carrinho!');
     },
 
@@ -196,9 +189,6 @@ const controller = {
     }
 };
 
-// ==========================================
-// 3. VIEW & ROUTER (Interface e Navegação)
-// ==========================================
 const router = {
     currentRoute: 'catalogo',
     params: {},
@@ -266,7 +256,6 @@ const router = {
     }
 };
 
-// Templates HTML das Telas
 const views = {
     catalogo() {
         const produtos = controller.getProdutos();
@@ -750,7 +739,6 @@ const views = {
     }
 };
 
-// Inicializar Renderização
 window.onload = () => {
     controller.atualizarBadgeCarrinho();
     router.render();
